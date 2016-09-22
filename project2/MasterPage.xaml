@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project2.MasterPage"
+             Title="Master Page"
+             x:Name="menu">
+
+	
+	   	<Grid RowSpacing="1">
+		  <Grid.RowDefinitions>
+		    <RowDefinition Height="150" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+		  </Grid.RowDefinitions>
+		  <Grid.ColumnDefinitions>
+		    <ColumnDefinition Width="*" />
+		  </Grid.ColumnDefinitions>
+		  <Button 
+			Text="Staff Name" 
+			Grid.Row="0" 
+			Grid.Column="0" 
+			BackgroundColor="#2B84D3"
+			BorderRadius="0"
+			TextColor="White"
+			/>
+		
+		  <Button 
+			Text="Home Page"
+			Clicked="HomePage_Clicked"
+			Grid.Row="1" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start" />
+		
+		 <Button Text="Item List" 
+			Clicked="ItemList_Clicked"
+			Grid.Row="2" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start"/>
+
+		<Button Text="Stock Manage"
+			Clicked="StockManage_Clicked"	
+			Grid.Row="3" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start"/>
+
+		<Button Text="Reorder Manage"
+			Clicked="ReorderManage_Clicked"
+			Grid.Row="4" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start"/>
+
+		<Button Text="Staff Manage" 
+			Clicked="StaffManage_Clicked"
+			Grid.Row="5" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start"/>
+
+		<Button Text="Account Setting" 
+			Clicked="AccountSetting_Clicked"
+			Grid.Row="6" 
+			Grid.Column="0" 
+			BorderRadius="0" 
+			TextColor="Black"
+			HorizontalOptions="Start"/>
+		
+		</Grid>
+</ContentPage>

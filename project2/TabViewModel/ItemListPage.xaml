@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="project2.ItemListPage"
+		Title="Item List"
+		Padding="0, 20, 0, 0">
+	
+	<ContentPage.Content>
+		
+		<ListView x:Name="itemlistview" RowHeight="50">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" Clicked="OnDelete" />
+						</ViewCell.ContextActions>
+						<StackLayout Orientation="Vertical" Padding="10">
+							<Label Text="{Binding ListName}" FontSize="16" VerticalOptions="Center"/>
+
+						</StackLayout>
+
+					</ViewCell>
+	        	</DataTemplate>	
+	    	</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
