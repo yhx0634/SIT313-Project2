@@ -108,6 +108,12 @@ namespace project2
 			//new SupplierList () {ID=0, SupplierName = "SupplierNamesssssssss"},
 			//new SupplierList () {ID=0, SupplierName = "mmmmmmmmmmmmmmmmmmmmm"}
 		};
+
+		public static ObservableCollection<FeedBack> feedBack = new ObservableCollection<FeedBack>
+		{
+			//new SupplierList () {ID=0, SupplierName = "SupplierNamesssssssss"},
+			//new SupplierList () {ID=0, SupplierName = "mmmmmmmmmmmmmmmmmmmmm"}
+		};
 	}
 }
 

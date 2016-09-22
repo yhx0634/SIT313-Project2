@@ -46,6 +46,7 @@
     <EmbeddedResource Include="ViewModel\Order\StockListForOrderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="icon-Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -97,6 +98,10 @@
     <Compile Include="ViewModel\Order\OrderContentPage.cs" />
     <Compile Include="ViewCell\OrderCell.cs" />
     <Compile Include="ViewModel\Order\OrderUpdatePage.cs" />
+    <Compile Include="Model\FeedBack.cs" />
+    <Compile Include="FeedBackContentPage.cs" />
+    <Compile Include="AboutPage.cs" />
+    <Compile Include="ViewCell\OrderUpdateCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

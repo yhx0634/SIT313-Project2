@@ -35,6 +35,7 @@ namespace project2
 			database.CreateTable<StockList>();
 			database.CreateTable<SupplierList>();
 			database.CreateTable<ListofItemList>();
+			database.CreateTable<FeedBack>();
 		}
 
 		//public IEnumerable<MyList> GetItems()
@@ -519,5 +520,16 @@ namespace project2
 			return Data.ListofItemList;
 		}
 
+
+		public IEnumerable<FeedBack> SaveFeedback()
+		{
+			foreach (FeedBack s in Data.feedBack)
+			{
+					database.Insert(s);
+			}
+			Data.feedBack.Clear();
+			return Data.feedBack;
+
+		}
 	}
 }

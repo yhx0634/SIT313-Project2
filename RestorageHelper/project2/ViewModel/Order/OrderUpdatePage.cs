@@ -23,7 +23,7 @@ namespace project2
 			listView = new ListView();
 			listView.RowHeight = 100;
 			listView.ItemTemplate = new DataTemplate
-				(typeof(OrderCell));
+				(typeof(OrderUpdateCell));
 
 			var layout = new StackLayout();
 

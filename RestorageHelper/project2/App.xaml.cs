@@ -1,5 +1,5 @@
 ﻿using Xamarin.Forms;
-using System;
+
 namespace project2
 {
 	public partial class App : Application
@@ -51,9 +51,9 @@ namespace project2
 					BarBackgroundColor = Color.FromHex("#2B84D3")
 				}
 				 );
-				tabs.Children.Add(new NavigationPage(new AccountPage() { Title = "Setting" })
+				tabs.Children.Add(new NavigationPage(new AboutPage() { Title = "About" })
 				{
-					Title = "Setting",
+					Title = "About",
 					//Icon = "SettingsIcon.png",
 					BarTextColor = Color.White,
 					BarBackgroundColor = Color.FromHex("#2B84D3")
@@ -88,14 +88,14 @@ namespace project2
 					BarBackgroundColor = Color.FromHex("#2B84D3")
 				}
 				 );
-				tabs.Children.Add(new NavigationPage(new AccountPage() { Title = "Setting" })
+				tabs.Children.Add(new NavigationPage(new AboutPage() { Title = "About" })
 				{
-					Title = "Setting",
+					Title = "About",
 					Icon = "SettingsIcon.png",
 					BarTextColor = Color.White,
 					BarBackgroundColor = Color.FromHex("#2B84D3")
-				}
-				 );
+				});
+
 			}
 
 

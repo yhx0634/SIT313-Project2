@@ -11,7 +11,7 @@ namespace project2
 
 			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(80) });
+			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
 			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
 
@@ -25,24 +25,54 @@ namespace project2
 			var itemNameLable = new Label
 			{
 				Text = "Lable",
-				FontSize = 20
+				FontSize = 20,
+				Margin = new Thickness(10, 0, 0, 0),
+				VerticalTextAlignment = TextAlignment.Center,
 			};
 			itemNameLable.SetBinding(Label.TextProperty, "ItemsName");
 
 
+			var supplierNameLable = new Label
+			{
+				Text = "Lable",
+				FontSize = 20,
+				TextColor = Color.Navy,
+				Margin = new Thickness(10, 0, 0, 0),
+				VerticalTextAlignment = TextAlignment.Center,
+			};
+			supplierNameLable.SetBinding(Label.TextProperty, "SupplierName");
+
+
+			var stockCountLable2222 = new Label
+			{
+				Text = "Stock Count:",
+				FontSize = 20,
+				HorizontalTextAlignment = TextAlignment.Start,
+				VerticalTextAlignment = TextAlignment.Center,
+			};
+
+
+			var stockCountLable = new Label
+			{
+				Text = "Lable",
+				FontSize = 20,
+				HorizontalTextAlignment = TextAlignment.End,
+				Margin = new Thickness(0, 0, 5, 0),
+				VerticalTextAlignment = TextAlignment.Center,
+			};
+			stockCountLable.SetBinding(Label.TextProperty, "Count");
 
 
 			var countInput = new Entry
 			{
-				Text = "Count",
+				Text = "0",
 				FontSize = 18,
 				WidthRequest = 120,
 				HorizontalTextAlignment = TextAlignment.Center,
 
 
 			};
-
-			countInput.SetBinding(Entry.TextProperty, "Count");
+			countInput.SetBinding(Entry.TextProperty, "OrderCount");
 
 			var unit = new Label
 			{
@@ -94,10 +124,10 @@ namespace project2
 			};
 
 
-			grid.Children.Add(imageButton, 0, 0);
-			Grid.SetRowSpan(imageButton, 2);
-
-			grid.Children.Add(itemNameLable, 1, 0);
+			grid.Children.Add(itemNameLable, 0, 0);
+			grid.Children.Add(stockCountLable2222, 1, 0);
+			grid.Children.Add(stockCountLable, 1, 0);
+			grid.Children.Add(supplierNameLable, 0, 1);
 			grid.Children.Add(input, 1, 1);
 
 			View = grid;

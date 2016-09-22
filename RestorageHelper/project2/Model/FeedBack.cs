@@ -4,31 +4,18 @@ using SQLite;
 
 namespace project2
 {
-	public class ItemsList
+	public class FeedBack
 	{
-		public ItemsList()
+		public FeedBack()
 		{
-			
+
 		}
 
 		[PrimaryKey, AutoIncrement]
 		public int ID { get; set; }
 
-		public DateTime StockDate { get; set; }
-
-		public string ItemsName{ get; set; }
-
-		public string ItemsUnit{ get; set; }
-
-		public string SupplierName { get; set; }
-
-		public string ItemsImage { get; set;}
-
-		public int Count { get; set; }
-
-		public int OrderCount { get; set; }
-
-		public int ListID { get; set; }
+		public string Feedback { get; set; }
+		public DateTime time { get; set;}
 
 
 

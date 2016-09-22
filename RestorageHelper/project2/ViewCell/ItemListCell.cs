@@ -73,7 +73,30 @@ namespace project2
 			};
 			unitInput.SetBinding(Entry.TextProperty, "ItemsUnit");
 
-			// default supplier
+			//// default supplier
+			//var supplierLable = new Label
+			//{
+			//	Text = "Supplier",
+			//	FontSize = 15,
+			//	HorizontalOptions = LayoutOptions.Center,
+			//	VerticalOptions = LayoutOptions.Center
+
+			//};
+			////itemNameLable.SetBinding(Label.TextProperty, "ItemName");
+			//var supplierInput = new Entry
+			//{
+			//	Text = "",
+			//	//WidthRequest = 120,
+			//	//HeightRequest = 20,
+			//	HorizontalTextAlignment = TextAlignment.Start,
+			//	VerticalOptions = LayoutOptions.Center,
+			//	Margin = new Thickness(0, 2, 5, 2)
+
+			//};
+			//supplierInput.SetBinding(Entry.TextProperty, "SupplierName");
+
+
+
 			var supplierLable = new Label
 			{
 				Text = "Supplier",
@@ -82,18 +105,46 @@ namespace project2
 				VerticalOptions = LayoutOptions.Center
 
 			};
-			//itemNameLable.SetBinding(Label.TextProperty, "ItemName");
-			var supplierInput = new Entry
+			var supplierPickerEntry = new Entry();
+			supplierPickerEntry.IsVisible = false;
+			string xx = " nothing ";
+			var supplierPicker = new Picker
 			{
-				Text = "",
-				//WidthRequest = 120,
-				//HeightRequest = 20,
-				HorizontalTextAlignment = TextAlignment.Start,
+				Title = "Supplier",
+				//VerticalOptions = LayoutOptions.CenterAndExpand
 				VerticalOptions = LayoutOptions.Center,
 				Margin = new Thickness(0, 2, 5, 2)
+			};
+			foreach (SupplierList sl in App.Database.GetSuppilerToItemsList())
+			{
+				supplierPicker.Items.Add(sl.SupplierName);
+			}
+			supplierPicker.SelectedIndexChanged += (sender, e) =>
+			{
+				if (supplierPicker.SelectedIndex == -1)
+				{
+					// error message
+				}
+				else
+				{
+					xx = supplierPicker.Items[supplierPicker.SelectedIndex];
+
+				}
+				supplierPickerEntry.Text = xx;
+				//supplierPickerEntry.SetBinding(Entry.TextProperty, "SupplierName");
+				//var supplierPickerEntry = new Entry { Text = xx};
+				//supplierPickerEntry.IsVisible = false;
+				//supplierPickerEntry.SetBinding(Entry.TextProperty, "SupplierName");
+				//supplierPicker.SetBinding(Picker.SelectedIndexProperty, "SupplierName");
 
 			};
-			supplierInput.SetBinding(Entry.TextProperty, "SupplierName");
+			//supplierPickerEntry.Text = xx;
+			////supplierPickerEntry.IsVisible = false;
+			supplierPickerEntry.SetBinding(Entry.TextProperty, "SupplierName");
+			////supplierPicker.SetBinding(Picker.SelectedIndexProperty, "SupplierName");
+
+
+
 
 
 			var addButton = new Button
@@ -101,6 +152,8 @@ namespace project2
 				Text = "Add",
 				FontSize = 20,
 				HorizontalOptions = LayoutOptions.Center,
+				Image = "Save.png",
+
 				//BackgroundColor = Color.Green,
 				//TextColor = Color.White
 			};
@@ -111,6 +164,7 @@ namespace project2
 				FontSize = 25,
 				TextColor = Color.Red,
 				HorizontalOptions = LayoutOptions.Center,
+				Image = "Delete.png",
 				//BackgroundColor = Color.Green,
 				//TextColor = Color.White
 			};
@@ -146,9 +200,17 @@ namespace project2
 			grid.Children.Add(unitInput, 1, 1);
 			Grid.SetColumnSpan(unitInput, 2);
 
+			//grid.Children.Add(supplierLable, 0, 2);
+			//grid.Children.Add(supplierInput, 1, 2);
+			//Grid.SetColumnSpan(supplierInput, 2);
+
 			grid.Children.Add(supplierLable, 0, 2);
-			grid.Children.Add(supplierInput, 1, 2);
-			Grid.SetColumnSpan(supplierInput, 2);
+			grid.Children.Add(supplierPicker, 1, 2);
+			Grid.SetColumnSpan(supplierPicker, 2);
+
+			grid.Children.Add(supplierPickerEntry, 1, 2);
+			//Grid.SetColumnSpan(supplierPicker, 2);
+
 
 			grid.Children.Add(addButton, 3, 0);
 			Grid.SetRowSpan(addButton, 2);

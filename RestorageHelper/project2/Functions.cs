@@ -105,7 +105,7 @@ namespace project2
 
 			foreach (var s in Data.ItemList)
 			{
-				Data.OrderList.Add(new OrderList() { OrderTime = time, ItemsID = s.ID, Quality = s.Count, StockTime = StockListForOrderPage.oederdynmdate });
+				Data.OrderList.Add(new OrderList() { OrderTime = time, ItemsID = s.ID, Quality = s.OrderCount, StockTime = StockListForOrderPage.oederdynmdate });
 			}
 		}
 
